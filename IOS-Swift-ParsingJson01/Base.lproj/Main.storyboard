@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,69 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IOS_Swift_ParsingJson01" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEF-RN-M8i">
+                                <rect key="frame" x="0.0" y="20" width="375" height="53"/>
+                                <color key="backgroundColor" red="0.82944579409999997" green="0.8460627906" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="SY3-PO-IHp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Read JSON file"/>
+                                <connections>
+                                    <action selector="readBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CD1-cz-H4D"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYs-Zt-hKT">
+                                <rect key="frame" x="0.0" y="73" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.86162301740000002" green="0.97679832229999997" blue="0.9881622779" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2kQ-0P-dDt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Clean Screen"/>
+                                <connections>
+                                    <action selector="cleanBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zbL-PU-gwD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t31-K6-sHG">
+                                <rect key="frame" x="0.0" y="103" width="375" height="564"/>
+                                <color key="backgroundColor" red="0.99975586130000005" green="1" blue="0.97458654020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IYs-Zt-hKT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1sJ-f0-4ld"/>
+                            <constraint firstItem="t31-K6-sHG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4S7-7D-gax"/>
+                            <constraint firstItem="IYs-Zt-hKT" firstAttribute="top" secondItem="lEF-RN-M8i" secondAttribute="bottom" id="Axj-Uj-W8j"/>
+                            <constraint firstItem="lEF-RN-M8i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Dqa-sH-FDX"/>
+                            <constraint firstItem="lEF-RN-M8i" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GMk-mq-vR6"/>
+                            <constraint firstItem="IYs-Zt-hKT" firstAttribute="top" secondItem="lEF-RN-M8i" secondAttribute="bottom" id="Sbt-u8-Gd5"/>
+                            <constraint firstItem="lEF-RN-M8i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YWr-7o-2Xu"/>
+                            <constraint firstItem="t31-K6-sHG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d6S-v8-oPD"/>
+                            <constraint firstItem="lEF-RN-M8i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="djC-Yw-SxJ"/>
+                            <constraint firstItem="IYs-Zt-hKT" firstAttribute="top" secondItem="lEF-RN-M8i" secondAttribute="bottom" id="gem-6g-s9s"/>
+                            <constraint firstItem="t31-K6-sHG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="jNq-PE-Owo"/>
+                            <constraint firstItem="t31-K6-sHG" firstAttribute="top" secondItem="IYs-Zt-hKT" secondAttribute="bottom" id="lub-Qk-qnz"/>
+                            <constraint firstItem="t31-K6-sHG" firstAttribute="top" secondItem="IYs-Zt-hKT" secondAttribute="bottom" id="xSD-F7-sOG"/>
+                            <constraint firstItem="IYs-Zt-hKT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zGZ-iM-pQv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="readResult" destination="t31-K6-sHG" id="yL8-FT-vEm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
         </scene>
     </scenes>
 </document>
